@@ -1,0 +1,22 @@
+                         Users
+                           |
+                           |
+                    Microsoft Entra ID
+                           |
+                    Authentication
+                           |
+                   Azure Application Gateway
+                           |
+                    Azure Virtual Network
+                           |
+        ------------------------------------------------
+        |                     |                        |
+ Application Layer       Data Layer              Monitoring
+        |                     |                        |
+ Docker/Kubernetes       Databases             Azure Monitor
+        |
+ ------------------------------------------------
+ |              |              |                |
+Snipe-IT     Frappe HR     Nexkors        Helpdesk
+Asset        HR            ERP            ITSM
+Management
