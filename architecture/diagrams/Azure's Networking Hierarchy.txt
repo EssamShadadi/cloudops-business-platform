@@ -1,0 +1,16 @@
+Internet
+    │
+    ▼
+Public IP (optional)
+    │
+    ▼
+Application Gateway
+    │
+    ▼
+Virtual Network (VNet)
+    │
+ ┌───┴───────────────┐
+ │                   │
+Subnets          Subnets
+ │                   │
+VMs            Databases
