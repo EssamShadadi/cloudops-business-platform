@@ -1,16 +1,12 @@
-Internet
-    │
-    ▼
-Public IP (optional)
-    │
-    ▼
-Application Gateway
-    │
-    ▼
-Virtual Network (VNet)
-    │
- ┌───┴───────────────┐
- │                   │
-Subnets          Subnets
- │                   │
-VMs            Databases
+| Index | Subnet Name              | CIDR           | Usable IPs* | Purpose                                               | Internet Exposure    |
+| ----: | ------------------------ | -------------- | ----------: | ----------------------------------------------------- | -------------------- |
+|    01 | `snet-app`               | `10.0.1.0/24`  |         251 | Application workloads, Docker hosts, web/API services | Private              |
+|    02 | `snet-db`                | `10.0.2.0/24`  |         251 | Databases and data services                           | **No public access** |
+|    03 | `snet-mgmt`              | `10.0.3.0/24`  |         251 | Administration, Bastion/jump-host functionality       | Restricted           |
+|    04 | `snet-monitoring`        | `10.0.4.0/24`  |         251 | Prometheus, Grafana, monitoring components            | Private              |
+|    05 | `snet-services`          | `10.0.5.0/24`  |         251 | Future shared services: Redis, queues, APIs, etc.     | Private              |
+|    06 | `snet-gateway`           | `10.0.6.0/24`  |         251 | Application Gateway                                   | Restricted           |
+|    07 | `snet-aks`               | `10.0.7.0/24`  |         251 | **Future Kubernetes/AKS workloads**                   | Private              |
+|    08 | `snet-private-endpoints` | `10.0.8.0/24`  |         251 | Azure Private Endpoints                               | Private              |
+|    09 | `snet-backup`            | `10.0.9.0/24`  |         251 | Future backup/recovery services                       | Private              |
+|    10 | `snet-reserved`          | `10.0.10.0/24` |         251 | Reserved for future architecture changes              | N/A                  |
